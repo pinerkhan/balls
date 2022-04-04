@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .circle{
+            width:100px;
+            height:100px;
+            border-radius:50%;
+            background-color:red;
+            transition:1s;
+            position:absolute;
+        }
+    </style>
+</head>
+<body>
+<div class = "circle" style = "left:0px;top:0px"></div>
+<div class = "circle" style = "left:100px;top:300px"></div>
+<div class = "circle" style = "left:750px;top:710px"></div>
+<div class = "circle" style = "left:1200px;top:80px"></div>
+<div class = "circle" style = "left:1000px;top:560px"></div>
+<div class = "circle" style = "left:300px;top:400px"></div>
+<div class = "circle" style = "left:910px;top:230px"></div>
+<div class = "circle" style = "left:670px;top:90px"></div>
+<div class = "circle" style = "left:1300px;top:700px"></div>
+<script>
+    let circle = document.querySelectorAll(".circle")
+    let score = 0
+    let left1 = 100
+    let left2 = 1200
+    let left3 = 1300
+    let left4 = 1000
+    let left5 = 600
+    let left6 = 300
+    let left7 = 10
+    let left8 = 900
+    let left9 = 180
+    let top1 = 100
+    let top2 = 300
+    let top3 = 100
+    let top4 = 0
+    let top5 = 320
+    let top6 = 270
+    let top7 = 300
+    let top8 = 130
+    let top9 = 400
+    function moveCircle(){
+        left1 = left1 + 15
+        left2 = left2 + 30
+        left3 = left3 + 20
+        left4 = left4 + 20
+        left5 = left5 + 10
+        left6 = left6 + 5
+        left7 = left7 + 20
+        left8 = left8 + 40
+        left9 = left9 + 10
+        top1 = top1 + 15
+        top2 = top2 + 30
+        top3 = top3 + 20
+        top4 = top4 + 40
+        top5 = top5 + 10
+        top6 = top6 + 30
+        top7 = top7 + 20
+        top8 = top8 + 40
+        top9 = top9 + 10
+        circle[0].style.left = left1 + "px"
+        circle[1].style.left = left2 + "px"
+        circle[2].style.left = left3 + "px"
+        circle[3].style.left = left4 + "px"
+        circle[4].style.left = left5 + "px"
+        circle[5].style.left = left6 + "px"
+        circle[6].style.left = left7 + "px"
+        circle[7].style.left = left8 + "px"
+        circle[8].style.left = left9 + "px"
+        circle[0].style.top = top1 + "px"
+        circle[1].style.top = top2 + "px"
+        circle[2].style.top = top3 + "px"
+        circle[3].style.top = top4 + "px"
+        circle[4].style.top = top5 + "px"
+        circle[5].style.top = top6 + "px"
+        circle[6].style.top = top7 + "px"
+        circle[7].style.top = top8 + "px"
+        circle[8].style.top = top9 + "px"
+        let num = Math.random() * 150
+        let num10 = Math.random() * 150
+        let num11 = Math.random() * 150
+        let num12 = Math.random() * 150
+        let num13 = Math.random() * 150
+        let num14 = Math.random() * 150
+        let num15 = Math.random() * 150
+        let num16 = Math.random() * 150
+        let num17 = Math.random() * 150
+        let num1 = Math.round(num)
+        let num2 = Math.round(num10)
+        let num3 = Math.round(num11)
+        let num4 = Math.round(num12)
+        let num5 = Math.round(num13)
+        let num6 = Math.round(num14)
+        let num7 = Math.round(num15)
+        let num8 = Math.round(num16)
+        let num9 = Math.round(num17)
+        circle[0].style.height = num1 + "px"
+        circle[1].style.height = num2 + "px"
+        circle[2].style.height = num3 + "px"
+        circle[3].style.height = num4 + "px"
+        circle[4].style.height = num5 + "px"
+        circle[5].style.height = num6 + "px"
+        circle[6].style.height = num7 + "px"
+        circle[7].style.height = num8 + "px"
+        circle[8].style.height = num9 + "px"
+        circle[0].style.width = num1 + "px"
+        circle[1].style.width = num2 + "px"
+        circle[2].style.width = num3 + "px"
+        circle[3].style.width = num4 + "px"
+        circle[4].style.width = num5 + "px"
+        circle[5].style.width = num6 + "px"
+        circle[6].style.width = num7 + "px"
+        circle[7].style.width = num8 + "px"
+        circle[8].style.width = num9 + "px"
+    }
+    for(let i = 0;i < 9; i = i + 1){
+        circle[i].onclick = function(){
+            score = score + 1
+            circle[i].style.display = "none"
+        }
+    }
+    function finish(){
+        circle[0].style.display = "none"
+        circle[1].style.display = "none"
+        circle[2].style.display = "none"
+        circle[3].style.display = "none"
+        circle[4].style.display = "none"
+        circle[5].style.display = "none"
+        circle[6].style.display = "none"
+        circle[7].style.display = "none"
+        circle[8].style.display = "none"
+        if (score == 9){
+            alert("You win!")
+        }
+        else{
+            alert("You lose")
+        }
+    }
+    setInterval(moveCircle,1000);
+    setTimeout(finish,7000)
+</script>
+</body>
+</html>
